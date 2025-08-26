@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <span class="dot"></span> Simple Weather
+    </div>
+    <div class="muted">Type a city, or use your current location. No API key needed.</div>
+
+    <div class="row card">
+      <div class="search results" style="position:relative;">
+        <input id="city" placeholder="Search city e.g. Kota Kinabalu, Tokyo, Semarang" autocomplete="off" />
+        <div id="dropdown" class="dropdown"></div>
+      </div>
+      <button id="geoBtn" class="btn">📍 Use my location</button>
+      <button id="searchBtn" class="btn">🔎 Search</button>
+      <button id="unitBtn" class="chip" aria-pressed="false" title="Toggle °C / °F">
+        <span>Units</span><strong id="unitLabel">°C</strong>
+      </button>
+    </div>
+
+    <div class="grid">
+      <section class="card" id="mainCard">
+        <div class="muted">Current weather</div>
+        <div class="tempwrap">
+          <div id="temp" class="big">--</div>
+          <div id="feels" class="sup muted"></div>
+        </div>
+        <div class="list">
+          <div id="summary" class="summary">—</div>
+          <div id="place" class="hint">—</div>
+          <div class="divider"></div>
+          <div class="kpi">
+            <div class="pill">💧 Humidity: <strong id="humidity">—</strong></div>
+            <div class="pill">🧭 Pressure: <strong id="pressure">—</strong></div>
+            <div class="pill">💨 Wind: <strong id="wind">—</strong></div>
+            <div class="pill">☁️ Clouds: <strong id="clouds">—</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="details-head">
+          <div class="muted">Details</div>
+          <span id="updated" class="badge">—</span>
+        </div>
+        <div class="list">
+          <div>Lat/Lon: <span id="latlon" class="hint">—</span></div>
+          <div>Wind dir: <span id="winddir" class="hint">—</span></div>
+          <div>Daylight: <span id="isday" class="hint">—</span></div>
+          <div>Weather code: <span id="wcode" class="hint">—</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> •
+      Geocoding by <a href="https://open-meteo.com/en/docs/geocoding-api" target="_blank" rel="noreferrer">Open-Meteo Geocoding</a> •
+      <span class="hint">Tip: push this folder to GitHub → enable GitHub Pages.</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
